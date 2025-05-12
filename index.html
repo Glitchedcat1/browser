@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Browser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loading-screen" id="loading-screen">
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <div class="browser">
+        <div class="toolbar">
+            <input type="text" id="url-input" placeholder="Enter URL..." />
+            <button onclick="navigate()">Go</button>
+            <input type="file" id="bg-upload" onchange="changeBackground()" />
+        </div>
+        <iframe id="browser-frame" src="" frameborder="0"></iframe>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
