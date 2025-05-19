@@ -1,35 +1,35 @@
 let tabs = [];
 let activeTab = null;
 
-// Simulate loading screen
-function showLoadingScreen() {
-    const loadingScreen = document.getElementById("loading-screen");
-    const progressBar = document.getElementById("progress-bar");
+// Open the browser
+function openBrowser() {
+    const launcher = document.getElementById("launcher-screen");
+    const browserContainer = document.getElementById("browser-container");
 
-    let width = 0;
-    const interval = setInterval(() => {
-        width += 10;
-        progressBar.style.width = width + "%";
-        
-        if (width >= 100) {
-            clearInterval(interval);
-            loadingScreen.style.display = "none";
-        }
-    }, 200);
+    launcher.style.display = "none";
+    browserContainer.style.display = "flex";
+
+    // Open the first tab
+    addNewTab();
 }
 
-// Navigate to a URL
-function navigate() {
-    const urlInput = document.getElementById("url-input").value;
-    if (urlInput) {
-        const url = urlInput.includes("http") ? urlInput : `https://${urlInput}`;
-        openTab(url);
+// Change background before browser opens
+function changeBackground() {
+    const fileInput = document.getElementById("bg-upload");
+    const file = fileInput.files[0];
+    
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.body.style.backgroundImage = `url('${e.target.result}')`;
+        };
+        reader.readAsDataURL(file);
     }
 }
 
 // Add a new tab
 function addNewTab() {
-    const defaultUrl = "https://www.google.com";
+    const defaultUrl = "https://ambient-steel.vercel.app/";
     openTab(defaultUrl);
 }
 
@@ -94,7 +94,3 @@ function renderTabs() {
         tabsContainer.appendChild(tabElement);
     });
 }
-
-// Run on page load
-showLoadingScreen();
-addNewTab();
