@@ -4,55 +4,37 @@ body, html {
     height: 100%;
     font-family: Arial, sans-serif;
     overflow: hidden;
+    background-size: cover;
 }
 
-/* Loading Screen */
-.loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* Launcher Screen */
+.launcher-screen {
     width: 100%;
-    height: 100%;
-    background-color: #282828;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    background-color: #282828;
+    gap: 20px;
 }
 
-.logo {
+.launcher-icon {
     width: 150px;
-    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.progress-bar {
-    width: 0;
-    height: 10px;
-    background-color: #00ff00;
-    border-radius: 5px;
-    transition: width 0.5s;
+.launcher-icon:hover {
+    transform: scale(1.1);
 }
 
-/* Browser */
-.browser {
+/* Browser Container */
+.browser-container {
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-}
-
-/* Toolbar */
-.toolbar {
-    background-color: #444;
-    padding: 10px;
-    display: flex;
-    gap: 10px;
-}
-
-#url-input {
-    flex: 1;
-    padding: 8px;
-    font-size: 14px;
 }
 
 /* Tabs */
@@ -96,27 +78,4 @@ body, html {
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
-}
-
-/* Bookmarks */
-.bookmarks {
-    background-color: #222;
-    color: #fff;
-    padding: 10px;
-    width: 200px;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    z-index: 999;
-    border-right: 2px solid #00ff00;
-}
-
-.bookmarks ul {
-    list-style: none;
-    padding: 0;
-}
-
-.bookmarks ul li {
-    margin: 10px 0;
-    cursor: pointer;
 }
