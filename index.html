@@ -7,33 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="loading-screen" id="loading-screen">
-        <img src="assets/logo.png" alt="Logo" class="logo">
-        <div class="progress-bar" id="progress-bar"></div>
+    <!-- Launcher Screen -->
+    <div id="launcher-screen" class="launcher-screen">
+        <img src="assets/icon.png" class="launcher-icon" onclick="openBrowser()" alt="Browser Icon">
+        <input type="file" id="bg-upload" onchange="changeBackground()" />
     </div>
 
-    <div class="browser">
-        <div class="toolbar">
-            <input type="text" id="url-input" placeholder="Enter URL..." />
-            <button onclick="navigate()">Go</button>
-            <button onclick="addBookmark()">⭐</button>
-            <input type="file" id="bg-upload" onchange="changeBackground()" />
-        </div>
-
+    <!-- Browser Container (Hidden by Default) -->
+    <div id="browser-container" class="browser-container" style="display: none;">
         <div class="tabs-container" id="tabs-container">
             <div class="tabs" id="tabs"></div>
             <button class="new-tab-button" onclick="addNewTab()">+</button>
         </div>
-
-        <div class="bookmarks" id="bookmarks">
-            <h3>Bookmarks</h3>
-            <ul id="bookmark-list"></ul>
-        </div>
-
-        <iframe id="browser-frame" src="" frameborder="0"></iframe>
+        <iframe id="browser-frame" src="https://ambient-steel.vercel.app/" frameborder="0"></iframe>
     </div>
 
-    <audio id="sound-effect" src="assets/fortnite-sound.mp3"></audio>
     <script src="app.js"></script>
 </body>
 </html>
