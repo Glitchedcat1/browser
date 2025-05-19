@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Browser</title>
+    <title>Ehmazing Browser</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,11 +16,24 @@
         <div class="toolbar">
             <input type="text" id="url-input" placeholder="Enter URL..." />
             <button onclick="navigate()">Go</button>
+            <button onclick="addBookmark()">⭐</button>
             <input type="file" id="bg-upload" onchange="changeBackground()" />
         </div>
+
+        <div class="tabs-container" id="tabs-container">
+            <div class="tabs" id="tabs"></div>
+            <button class="new-tab-button" onclick="addNewTab()">+</button>
+        </div>
+
+        <div class="bookmarks" id="bookmarks">
+            <h3>Bookmarks</h3>
+            <ul id="bookmark-list"></ul>
+        </div>
+
         <iframe id="browser-frame" src="" frameborder="0"></iframe>
     </div>
 
+    <audio id="sound-effect" src="assets/fortnite-sound.mp3"></audio>
     <script src="app.js"></script>
 </body>
 </html>
